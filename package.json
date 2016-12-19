@@ -1,0 +1,24 @@
+{
+  "name": "curate2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armaanshah96/cuRate2.git"
+  },
+  "author": "Armaan Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armaanshah96/cuRate2/issues"
+  },
+  "homepage": "https://github.com/armaanshah96/cuRate2#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express-slack": "^1.0.8",
+    "slackbots": "^1.0.1"
+  }
+}
