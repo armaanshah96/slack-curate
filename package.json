@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/armaanshah96/cuRate2#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express-slack": "^1.0.8",
     "slackbots": "^1.0.1"
