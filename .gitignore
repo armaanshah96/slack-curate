@@ -1,3 +1,5 @@
 # Dependency directories
 node_modules
 .env
+tweet.json
+js-playground.js
