@@ -33,7 +33,7 @@ app.get('/authorize', function(req, res){
 			res.redirect('http://' +team+ '.slack.com');
 		}
 	});
-}
+});
 
 app.post('/', function(req,res) {
 	// ensure that this command came from slack, and if not don't do anything
