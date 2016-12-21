@@ -13,28 +13,6 @@ app.listen(process.env.PORT || 3000,function() {
 	console.log('curate listening on port 3000');
 });
 
-app.get('/authorize', function(req, res){
-	var data = {
-		form: {
-			client_id: process.env.SLACK_CLIENT_ID,
-			client_secret: process.env.SLACK_CLIENT_SECRET,
-			code: req.query.code
-		}
-	};
-	request.post('https://slack.com/api/oauth.access', data, function (error, response, body) {
-		if (!error && response.statusCode == 200) {
-			// If you want to get team info, you need to get the token here
-			let token = JSON.parse(body).access_token; // Auth token
-		}
-	});
-	request.post('https://slack.com/api/team.info', {form: {token: token}},function (error, response, body) {
-		if (!error && response.statusCode == 200) {
-			let team = JSON.parse(body).team.domain;
-			res.redirect('http://' +team+ '.slack.com');
-		}
-	});
-});
-
 app.post('/', function(req,res) {
 	// ensure that this command came from slack, and if not don't do anything
 	if(process.env.SLACK_TOKEN !== req.body.token) return;
@@ -45,7 +23,7 @@ app.post('/', function(req,res) {
 
 	if(names.length > 20) {
 		res.send({
-		  "response_type": "ephemeral",
+		  "response_type": "in_channel",
 		  "text": "Try to keep it bite sized! Also slack allows 20 attachments, so keep it at most 20!"
 		});
 		return;
