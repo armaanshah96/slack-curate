@@ -13,10 +13,17 @@ app.listen(process.env.PORT || 3000,function() {
 	console.log('curate listening on port 3000');
 });
 
+app.get('/', function(req,res) {
+	res.send("Heroku Web Dyno is up and running");
+})
+
 app.post('/', function(req,res) {
 	// ensure that this command came from slack, and if not don't do anything
-	if(process.env.SLACK_TOKEN !== req.body.token) return;
-
+	if(process.env.SLACK_TOKEN !== req.body.token) {
+		res.send("Slack token could not be verified");
+		return;
+	};
+	console.log("token verified");
 	// check if exceeds max 20 twitter handles
 	names = req.body.text.split(" ");
 	var names = _.without(names, ''); // removing any string splits on extra whitespace
@@ -38,6 +45,9 @@ app.post('/', function(req,res) {
 		res.send(helpMessage);
 		return;
 	}
+
+	console.log("about to send confirmation of receive");
+
 
 	var response_url = req.body.response_url;
 	// send confirmation bc a delayed post will be needed
