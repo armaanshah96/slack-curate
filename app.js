@@ -20,6 +20,8 @@ app.get('/', function(req,res) {
 app.post('/', function(req,res) {
 	// ensure that this command came from slack, and if not don't do anything
 	if(process.env.SLACK_TOKEN !== req.body.token) {
+		console.log(req.body.token);
+		console.log(process.env.SLACK_TOKEN);
 		res.send("Slack token could not be verified");
 		return;
 	};
