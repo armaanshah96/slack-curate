@@ -1,0 +1,27 @@
+{
+  "name": "slack-curate",
+  "description": "Curate provides your twitter highlights in bite size straight to your slack channel.",
+  "repository": "https://github.com/armaanshah96/slack-curate",
+  "env": {
+    "SLACK_TOKEN": {
+      "description": "Slash command token, for the starbot command endpoint",
+      "required": true
+    },
+    "TWITTER_CONSUMER_KEY": {
+      "description": "Slash command token, for the starbot command endpoint",
+      "required": true
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "Slack bot RTM API token",
+      "required": false
+    },
+    "TWITTER_TOKEN": {
+      "description": "Slash command token, for the starbot command endpoint",
+      "required": true
+    },
+    "TWITTER_TOKEN_SECRET": {
+      "description": "Slack bot RTM API token",
+      "required": false
+    },
+  },
+}
