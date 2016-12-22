@@ -22,6 +22,6 @@
     "TWITTER_TOKEN_SECRET": {
       "description": "Slack bot RTM API token",
       "required": false
-    },
-  },
+    }
+  }
 }

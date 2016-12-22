@@ -1,5 +1,6 @@
 # Dependency directories
+./.env
 node_modules/
-.env
-tweet.json
+./tweet.json
 publish.js
+./.gitignore

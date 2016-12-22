@@ -9,7 +9,8 @@ Curate is a slash command that brings yesterday's news and highlights from your 
 
 Curate finds the yesterday's most popular tweet by each specified handle, scored based on number of favorites and retweets, and returns to your slack channel. 
 
-![slack-currency screenshot example](curate-example.png)
+![slack-curate command example](curate-command.png)
+![slack-curate screenshot example](curate-example.png)
 
 ##  Setup
 1. Create a Slack [slash command][slack-command] integration. After clicking 'Add Integration', scroll to 'Integration Settings' and note the token provided. Before we proceed, let's complete steps 2 and 3.
@@ -29,7 +30,7 @@ If you prefer manually deploying (assumes [Heroku CLI Toolbelt][toolbelt] is ins
   $ heroku open
 ```
 
-After deploying (manually or by button), note the URL endpoint that Heroku provides (i.e. https://enigma-forest-61315.herokuapp.com/)
+After deploying (manually or by button), note the URL endpoint that Heroku provides (i.e. https://enigma-forest-12345.herokuapp.com/ - this is not, i hope, an actual link to something)
 
 
 4. Now return to the slack slash command integration and add the URL endpoint under "Integration Settings". Make sure that the 'METHOD' field is set to POST. Otherwise, optionally fill out other fields on the page. Once you are done click 'Save Integration'
@@ -44,11 +45,20 @@ Unless you used the Heroku button, each of the tokens that you have taken note o
 - `TWITTER_TOKEN`
 - `TWITTER_TOKEN_SECRET`
 
+## Future Releases
+Ideally, a command (i.e. /curate_daily) that sends daily highlights without the manual command will be made available (possibly in a full app integration). For now see [cuRate][curate-r] if you'd like an automated incoming webhook to send you daily highlights.
+
+A /curate_watch command that sends a webhook to your channel when (a) specific twitter handle(s) hit(s) a threshold score. Be notified of something very important that is happening right away.
+
+## Notes
+Please, feel free to submit pull requests and contribute. One potentially important use case of slack-curate could be for a startup that works through slack. Being quickly updated about the basic information in your industry could be valuable and time efficient. Wake up in the morning and get an idea of any important news before you even start working.
+
 ## License
 
-ISC © [Armaan Shah](http://armaanshah.me)
+MIT © [Armaan Shah](http://armaanshah.me)
 
 [twitter-bot]: https://apps.twitter.com/app/new
 [slack-command]: https://my.slack.com/services/new/slash-commands
 [toolbet]: https://devcenter.heroku.com/articles/heroku-cli
 [heroku-account]: https://signup.heroku.com/
+[curate-r]: https://github.com/armaanshah96/cuRate
