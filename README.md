@@ -1,5 +1,5 @@
 #slashCurate
-####**
+
 #####*21 Dec 2016*
 
 ***
@@ -7,25 +7,23 @@
 
 Curate is a slash command that brings yesterday's news and highlights from your twitter feed to your channel. A bite sized tweet curator that helps you stay in the-know and keeps it seamless by never having to leave your slack environment.
 
-Curate reads the desired users' tweets from the past day, and scores each tweet based on how many Twitter users favorited and retweeted. Only the best tweet from each account will be sent to the Slack channel. 
+Curate finds the yesterday's most popular tweet by each specified handle, scored based on number of favorites and retweets, and returns to your slack channel. 
 
 ![slack-currency screenshot example](curate-example.png)
 
 ##  Setup
 1. Create a Slack [slash command][slack-command] integration. After clicking 'Add Integration', scroll to 'Integration Settings' and note the token provided. Before we proceed, let's complete steps 2 and 3.
 2. Create a Twitter [bot][twitter-bot] and leave placeholder text when prompted for a website url. Click create and select the "Keys and Access Tokens" tab. Note the 'Consumer Key', 'Consumer Secret', 'Access Token', and 'Access Token Secret'. 
-3. Next, lets must deploy slack-curate on Heroku. To deploy `slack-curate` on Heroku, I recommend using this button to create your own copy of `slack-curate`:
+3. Next, lets deploy slack-curate on Heroku (of course you may use your own web host if you'd like). To deploy `slack-curate` on Heroku, I recommend using this button to create your own copy of `slack-curate` (Use the tokens we have generated to fill out of the necessary fields):
 
-
-Use the tokens we have generated to fill out of the necessary fields
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/matiassingers/slack-currency)
-
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/armaanshah96/slack-curate)
 
 If you prefer manually deploying (assumes [Heroku CLI Toolbelt][toolbelt] is installed and that you have a [Heroku Account][heroku-account]):
 ```sh
   $ git clone git@github.com:armaanshah96/slack-curate.git && cd slack-curate
   $ npm install
   $ heroku login
+    (^^Follow password instructions)
   $ heroku create
   $ git push heroku master
   $ heroku open
