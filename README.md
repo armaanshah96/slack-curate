@@ -1,9 +1,9 @@
-#slashCurate
+#slack-curate
 
 #####*21 Dec 2016*
 
 ***
-####Overview
+##Overview
 
 Curate is a slash command that brings yesterday's news and highlights from your twitter feed to your channel. A bite sized tweet curator that helps you stay in the-know and keeps it seamless by never having to leave your slack environment.
 
